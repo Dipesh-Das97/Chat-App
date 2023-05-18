@@ -12,7 +12,7 @@ app.get('/', (req: Request, res: Response)=>{
 
 app.post('/user', addUserInfoToReq , (req: Request, res: Response) => {
     const lastName = req?.body.lastName;
-    let userInfo = req?.userInfo;
+    let userInfo = (req as any)?.userInfo;
     res.send({...userInfo, name: userInfo?.firstName + ' ' + lastName});
 });
 
