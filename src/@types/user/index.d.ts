@@ -1,10 +1,16 @@
-import { UserInfoShape } from "../../interfaces/userInfo";
+// import { UserInfoShape } from "../../interfaces/userInfo";
 
-// @ts-expect-error
-declare module 'Express' {
-    // @ts-expect-error
-    export interface Request {
-        // @ts-expect-error
-        userInfo?: UserInfoShape
+// declare module 'Express' {
+//    export interface Request {
+//        userInfo?: UserInfoShape
+//    }
+// }
+import express from 'express';
+
+declare global {
+    namespace Express {
+        interface Request {
+            userInfo?: any
+        }
     }
 }
