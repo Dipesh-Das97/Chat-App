@@ -1,0 +1,22 @@
+name: Run Server build
+on:
+  pull_request:
+    branches: 
+      - master
+jobs:
+ Install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Checking out repository
+      
+      - uses: actions/setup-node@v1
+      - run: npm install
+
+      - name: Installing dependencies in Server Side
+        run: |- 
+          yarn install --pure-lockfile
+      
+      - name: Build Server Side
+        run: |- 
+          npm run clean && npm run build
