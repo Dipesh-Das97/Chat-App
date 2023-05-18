@@ -1,10 +1,10 @@
-// import { UserInfoShape } from "../../interfaces/userInfo";
+import { UserInfoShape } from "../../interfaces/userInfo";
 
-// @ts-ignore
+// @ts-expect-error
 declare module 'Express' {
-    // @ts-ignore
+    // @ts-expect-error
     export interface Request {
-        // @ts-ignore
-        userInfo?: any
+        // @ts-expect-error
+        userInfo?: UserInfoShape
     }
 }
