@@ -14,9 +14,7 @@ jobs:
       - run: npm install
 
       - name: Installing dependencies in Server Side
-        run: |- 
-          yarn install --pure-lockfile
+        run: npm install --pure-lockfile
       
       - name: Build Server Side
-        run: |- 
-          npm run clean && npm run build
+        run: npm run clean && npm run build
