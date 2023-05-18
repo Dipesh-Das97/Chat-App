@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { UserInfoShape } from "../../interfaces/userInfo";
 
 declare module 'Express' {
